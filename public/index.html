@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Cloud Infrastructure Monitor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>APEX // CLOUD METRICS MONITOR</h1>
+        <div id="connection-status" class="status-badge connecting">Connecting to Stream...</div>
+    </header>
+
+    <main>
+        <section class="metrics-grid">
+            <div class="card">
+                <h3>CPU Utilization</h3>
+                <p class="value"><span id="rpm-val">0</span> <span class="unit">%</span></p>
+            </div>
+            <div class="card">
+                <h3>Memory Usage</h3>
+                <p class="value"><span id="temp-val">0</span> <span class="unit">GB</span></p>
+            </div>
+            <div class="card">
+                <h3>Network Ingestion</h3>
+                <p class="value"><span id="boost-val">0</span> <span class="unit">MB/s</span></p>
+            </div>
+        </section>
+
+        <section id="alert-panel" class="alert-box healthy">
+            <strong>System Status:</strong> <span id="status-text">HEALTHY</span>
+            <p id="alert-details">All systems operating within normal parameters.</p>
+        </section>
+
+        <section class="chart-container">
+            <canvas id="telemetryChart"></canvas>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
